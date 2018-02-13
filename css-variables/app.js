@@ -2,7 +2,6 @@ const divs = document.querySelectorAll('.controls input');
 
 const handleUpdate = function(value) {
   const suffix = this.dataset.sizing || '';
-  console.log(this.value);
   document.documentElement.style.setProperty(`--${this.name}`, this.value + suffix); // select css var
 };
 
