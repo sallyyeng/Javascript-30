@@ -2,12 +2,12 @@ const secondHand = document.querySelector('.second-hand');
 const minuteHand = document.querySelector('.min-hand');
 const hourHand = document.querySelector('.hour-hand');
 
-const getDegrees = function(metric) {
+const getDegrees = function(hand) {
   const now = new Date();
-  if (metric === 'hours') {
+  if (hand === 'hours') {
     const hoursDegrees = ((now.getHours() / 12) * 360) + ((now.getMinutes() / 60) * 30) + 90;
     return hoursDegrees;
-  } else if (metric === 'minutes') {
+  } else if (hand === 'minutes') {
     const minsDegrees = ((now.getMinutes() / 60) * 360) + ((now.getSeconds() / 60) * 6) + 90;
     return minsDegrees;
   } else {
