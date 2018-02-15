@@ -1,6 +1,6 @@
 html {
   box-sizing: border-box;
-  background:#ffc600;
+  background:#ffffff;
   font-family:'Lato';
   font-size: 20px;
   font-weight: 200;
@@ -37,19 +37,18 @@ body {
   /* evenly distribute space between panels */
   flex: 1;
   /* align left and right */
-  justify-content: center;
-  align-items: center;
+  /* justify-content: center; */
+  /* align-items: center; */
   /* now make each panel a flex container */
-  display: flex;
-  flex-direction: column;
+  /* display: flex; */
+  /* flex-direction: column; */
 }
 
 
-.panel1 { background-image:url(https://source.unsplash.com/gYl-UtwNg_I/1500x1500); }
-.panel2 { background-image:url(https://source.unsplash.com/rFKUFzjPYiQ/1500x1500); }
-.panel3 { background-image:url(https://images.unsplash.com/photo-1465188162913-8fb5709d6d57?ixlib=rb-0.3.5&q=80&fm=jpg&crop=faces&cs=tinysrgb&w=1500&h=1500&fit=crop&s=967e8a713a4e395260793fc8c802901d); }
-.panel4 { background-image:url(https://source.unsplash.com/ITjiVXcwVng/1500x1500); }
-.panel5 { background-image:url(https://source.unsplash.com/3MNzGlQM7qs/1500x1500); }
+.panel1 { background-image:url(https://static.pexels.com/photos/417489/pexels-photo-417489.jpeg); }
+.panel2 { background-image:url(https://static.pexels.com/photos/70953/pexels-photo-70953.jpeg); }
+.panel3 { background-image:url(https://i.imgur.com/JW5r99h.jpg); }
+.panel4 { background-image:url(https://static.pexels.com/photos/271082/pexels-photo-271082.jpeg); }
 
 /* Flex Items */
 .panel > * {
@@ -64,24 +63,34 @@ body {
 }
 
 /* transforms the first row of panels in and out of page like a switch */
-.panel > *:first-child { transform: translateY(-100%); }
-.panel.open-active > *:first-child { transform: translateY(0); }
+/* .panel > *:first-child { transform: translateY(-100%); } */
+/* .panel.open-active > *:first-child { transform: translateY(0); } */
 
 .panel > *:last-child { transform: translateY(100%); }
-.panel.open-active > *:last-child { transform: translateY(0); }
+/* .panel.open-active > *:last-child { transform: translateY(0); } */
 
 .panel p {
   text-transform: uppercase;
   font-family: 'Lato', cursive;
-  text-shadow:0 0 4px rgba(0, 0, 0, 0.72), 0 0 14px rgba(0, 0, 0, 0.45);
-  font-size: 2em;
-}
-.panel p:nth-child(2) {
+  text-shadow:0 0 35px rgba(0, 0, 0, 1);
   font-size: 4em;
 }
+/* .panel p:nth-child(2) {
+  font-size: 4em;
+} */
 
 .panel.open {
   flex: 5;
   font-size:20px;
 }
+
+.text {
+  transition: linear 0.5s;
+}
+
+.text.inactive {
+  opacity: 1;
+  transform: translateY(-100%);
+}
+
 
