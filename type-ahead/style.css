@@ -1,7 +1,7 @@
     html {
       box-sizing: border-box;
       background:#7abfee;
-      font-family:'helvetica neue';
+      font-family: 'Lato';
       font-size: 20px;
       font-weight: 200;
     }
@@ -20,6 +20,8 @@
 
     input.search {
       margin: 0;
+      font-family: Lato;
+      font-weight: bold;
       text-align: center;
       outline:0;
       border: 10px solid rgb(240, 193, 64);
