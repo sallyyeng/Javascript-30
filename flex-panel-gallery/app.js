@@ -3,13 +3,12 @@ let lastPanel = false;
 
 // stretches the panel
 const toggleOpen = function() {
+  // close every open panel
   panels.forEach(panel => {
     if (panel !== this && panel.classList.contains('open')) {
       panel.classList.toggle('open');
     }
   });
-
-
   this.classList.toggle('open');
 };
 
@@ -21,4 +20,4 @@ const toggleActive = function(e) {
 };
 
 panels.forEach(panel => panel.addEventListener('click', toggleOpen));
-panels.forEach(panel => panel.addEventListener('transitionend', toggleActive));
+// panels.forEach(panel => panel.addEventListener('transitionend', toggleActive));

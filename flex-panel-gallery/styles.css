@@ -24,8 +24,6 @@ body {
   background:rgb(196, 221, 233);
   box-shadow:inset 0 0 0 5px rgba(255,255,255,0.1);
   color:white;
-  text-align: center;
-  align-items:center;
   /* Safari transitionend event.propertyName === flex */
   /* Chrome + FF transitionend event.propertyName === flex-grow */
   transition:
@@ -33,43 +31,30 @@ body {
     font-size 0.7s cubic-bezier(0.61,-0.19, 0.7,-0.11),
     flex 0.7s cubic-bezier(0.61,-0.19, 0.7,-0.11),
     background 0.2s;
-  font-size: 15px;
+  font-size: 13px;
   background-size:cover;
   background-position:center;
-  /* evenly distribute space between panels */
   flex: 1;
-  display: flex;
-  align-items: flex-end;
+  display: grid;
+  grid-template-rows: repeat(5, 20%);
 }
-
 
 .panel1 { background-image:url(https://static.pexels.com/photos/417489/pexels-photo-417489.jpeg); }
 .panel2 { background-image:url(https://static.pexels.com/photos/70953/pexels-photo-70953.jpeg); }
 .panel3 { background-image:url(https://i.imgur.com/JW5r99h.jpg); }
 .panel4 { background-image:url(https://static.pexels.com/photos/271082/pexels-photo-271082.jpeg); }
 
-/* Flex Items */
-.panel > * {
-  margin:0;
-  width: 100%;
-  transition:transform 0.5s;
-  /* stretches content across each flex panel */
-  flex: 1 0 auto;
+
+.panel > .menu {
+  grid-row: 5;
   display: flex;
   justify-content: center;
-  align-items: center;
 }
 
-/* transforms the first row of panels in and out of page like a switch */
-/* .panel > *:first-child { transform: translateY(-100%); } */
-/* .panel.open-active > *:first-child { transform: translateY(0); } */
-
-.panel > *:last-child { transform: translateY(100%); }
-.panel.open-active > *:last-child { transform: translateY(0); }
 
 .panel p {
   text-transform: uppercase;
-  font-family: 'Lato', cursive;
+  font-family: 'Lato';
   text-shadow:0 0 35px rgba(0, 0, 0, 1);
   font-size: 4em;
 }
@@ -80,16 +65,40 @@ body {
 
 .panel.open {
   flex: 5;
-  font-size:20px;
+  font-size:18px;
 }
 
-.button {
+.panel.open > .menu {
+  grid-row: 1;
+  justify-content: flex-start;
+  margin: 50px
+}
+
+/* Deals with appearing on click */
+
+/* Flex Items */
+/* .panel > * {
+  margin:0;
+  width: 100%;
+  transition:transform 0.5s;
+  flex: 1 0 auto;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+} */
+
+/* Deals with appearing on click */
+/* .panel.open-active > *:last-child { transform: translateY(0); } */
+/* .panel > *:first-child { transform: translateY(-100%); } */
+/* .panel.open-active > *:first-child { transform: translateY(0); } */
+
+/* .button {
   transition: linear 0.5s;
 }
 
 .button.inactive {
   opacity: 1;
   transform: translateY(-100%);
-}
+} */
 
 
