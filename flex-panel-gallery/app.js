@@ -3,12 +3,14 @@ let lastPanel = false;
 
 // stretches the panel
 const toggleOpen = function() {
-  if (lastPanel) {
-    lastPanel.classList.toggle('open');
-  }
-  if (this !== lastPanel) { this.classList.toggle('open'); }
-  lastPanel = this;
-  console.log(this.classList);
+  panels.forEach(panel => {
+    if (panel !== this && panel.classList.contains('open')) {
+      panel.classList.toggle('open');
+    }
+  });
+
+
+  this.classList.toggle('open');
 };
 
 // brings words back into the page

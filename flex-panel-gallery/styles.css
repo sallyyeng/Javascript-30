@@ -38,12 +38,8 @@ body {
   background-position:center;
   /* evenly distribute space between panels */
   flex: 1;
-  /* align left and right */
-  /* justify-content: center; */
-  /* align-items: center; */
-  /* now make each panel a flex container */
   display: flex;
-  flex-direction: column;
+  align-items: flex-end;
 }
 
 
